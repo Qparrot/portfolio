@@ -4,66 +4,193 @@
 		<title> FRONT END Developer</title>
 		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="style.css">
-		<link rel="stylesheet" type="text/css" href="style2.css">
+
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/100/three.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/simplex-noise/2.4.0/simplex-noise.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.0.3/chroma.min.js"></script>
-		<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+
+		<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" media="all" rel="stylesheet">
+		<link href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css" media="all" rel="stylesheet" id="font-awesome-5-kit-css">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" href="./img/favicon.png">
+
 		<meta charset="UTF-8">
 	</head>
 	<body>
-		<div id="Showcase">
+		<section id="Showcase">
 			<header>
-				<nav class="language">
-					<ul>
-						<li><a href="#fr" onclick="reload()" class="changeColorWithBackground">FR</a></li>
-						<li><a href="#en" onclick="reload()" class="changeColorWithBackground">EN</a></li>
-						<li><a href="#de" onclick="reload()" class="changeColorWithBackground">DE</a></li>
-					</ul>
-				</nav>
 				<nav id="navbar" class="cf">
 					<ul class="cf">
-						<li><a id="about" class="nav-link changeColorWithBackground" href="#Showcase">About</a></li>
-						<li><a id="projects" class="nav-link changeColorWithBackground" href="#Portfolio">Portfolio</a></li>
-						<li><a id="contact" class="nav-link changeColorWithBackground" href="#Contact">Contact</a></li>
+						<li><a id="about" class="nav-link smooth-move changeColorWithBackground active" href="#Showcase">About</a></li>
+						<li><a id="projects" class="nav-link smooth-move changeColorWithBackground" href="#Portfolio">Portfolio</a></li>
+						<li><a id="contact" class="nav-link smooth-move changeColorWithBackground" href="#Contact">Contact</a></li>
 					</ul>
 					<a href="#" id="openup">MENU</a>
 				</nav>  
 			</header>
 			<div id="shortPresentation">
-				<h1 id="title" class="changeColorWithBackground">FRONT END DEVELOPER</h1>
-				<p id="shortDescription" class="changeColorWithBackground"> I build website for entrepreneur so their business achieves their goals!</p>
-				<canvas id="background"></canvas>
+				<h1 id="title" class="changeColorWithBackground">FRONT END DEVELOPER <span class="fa fa-rocket"></span></h1>
+				<p id="shortDescription" class="changeColorWithBackground">Based in Berlin, I am a passionate self-taught developer. I can work in your office or remotely to build your website</p>
+				<a type="button" class="btn primary-btn smooth-move" href="#Contact">CONTACT ME</a>
 			</div>
-		</div>
-		<div id="Portfolio">
+			<canvas id="background"></canvas>
+			<a href="#Portfolio" class="hero__scroll-indicator smooth-move" aria-label="Scroll to content">
+				<svg width="63" height="23" viewBox="0 0 63 23" xmlns="http://www.w3.org/2000/svg">
+					<path d="M62.447 1.724L31.724 21.162 1 1.724" stroke="#333" stroke-width="2" fill="none" fill-rule="evenodd" stroke-opacity=".7"></path>
+				</svg>
+			</a>
+		</section>
+		<section id="Portfolio">
 			<div class="container">
 				<h2 class="text-center">PORTFOLIO</h2>
-				<div id="projectsContainer">
+				<div class="projectsContainer">
 					<div id="portfolio" class="grid">
 						<figure class="effect-hover1">
-							<img src="img/portfolio.png" alt="portfolio image"/>
+							<img src="./img/portfolio.png" alt="portfolio image"/>
 							<figcaption>
-								<h2>Three.js <span>Portfolio</span></h2>
+								<h2>My <span>PORTFOLIO</span></h2>
 								<div class="icon-links">
-									<a href="https://www.github.com"><i class="fab fa-github"></i></a>	
-									<a href="#showcase"><i class="fas fa-eye"></i></a>	
+									<a href="https://github.com/Qparrot/portfolio"><i class="fab fa-github"></i></a>	
+									<a href="www.quentinparrot.com"><i class="fas fa-eye"></i></a>	
 									<a href="#Contact"><i class="far fa-envelope"></i></a>
 								</div>
-								<p class="description">Developed with html, css, js, three.js</p>
+								<p class="description">Made with three.js</p>
 							</figcaption>			
 						</figure>
 					</div>
 				</div>
+				<div class="pop-up">
+					<div class="pop-up-display">
+						<div class="popUpHeader">
+							<h1>My Portfolio</h1>
+							<p class="return">close</p>
+						</div>
+						<div class="popUpContent">
+							<div class="row">
+								<div class="col-md-6">
+									<img src="./img/portfolio.png" alt="portfolio image"/>
+									<h2> Description</h2>
+									<div class="content">
+										<p>This website has been created to show my programming skills. it is divided in 4 parts: Presentation, Portfolio, Contact and Footer. This first version is hosted with a node server on a raspberry pi.</p> 
+									</div>
+									<h2>Technologies used</h2>
+									<div class="content">
+										<ul>
+											<li>html</li>
+											<li>css</li>
+											<li>javascript</li>
+											<li>jquery</li>
+											<li>three.js</li>
+											<li>node.js</li>
+											</lu>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<h2>My Role</h2>
+									<div class="content">
+										<p>I was the developer and designer of this website. I also manage the installation of the raspberry pi as a server.</p> 
+									</div>
+									<h2>Difficulties</h2>
+									<div class="content">
+										<ul>
+											<li>Setting the rapsberry pi as a server.</li>
+											<li>making the website responsive.</li>
+											<li>Implementing all interactions and animations.</li>
+										</ul> 
+									</div>
+									<h2>My Solutions</h2>
+									<div class="content">
+										<p>I decided to use apache2 to create a server and use a proxy to add a nodejs server to it. To make the website responsive I learn about bootstrap and media queries. Finally for the animations, I learn three.js and new css tricks. </p> 
+									</div>
+									<h2>Notable Features</h2>
+									<div class="content">
+										<ul>
+											<li>3D background</li>
+											<li>parallax implementation</li>
+											<li>Server with node.js</li>
+											<li>host with nodejs on a rapsberry pi</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="invisibleDiv"></div>
+				</div>
+
+				<div class="projectsContainer">
+
+					<div id="D3" class="grid">
+						<figure class="effect-hover1" >
+							<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="96" height="91" style="margin: auto;">
+
+								<clipPath id="clip">
+								<path d="M0,0h7.75a45.5,45.5 0 1 1 0,91h-7.75v-20h7.75a25.5,25.5 0 1 0 0,-51h-7.75zm36.2510,0h32a27.75,27.75 0 0 1 21.331,45.5a27.75,27.75 0 0 1 -21.331,45.5h-32a53.6895,53.6895 0 0 0 18.7464,-20h13.2526a7.75,7.75 0 1 0 0,-15.5h-7.75a53.6895,53.6895 0 0 0 0,-20h7.75a7.75,7.75 0 1 0 0,-15.5h-13.2526a53.6895,53.6895 0 0 0 -18.7464,-20z"/>
+								</clipPath><linearGradient gradientUnits="userSpaceOnUse" x1="7" y1="64" x2="50" y2="107" id="gradient-1">
+								<stop offset="0" stop-color="#f9a03c"/>
+								<stop offset="1" stop-color="#f7974e"/>
+								</linearGradient>
+								<linearGradient id="gradient-2" gradientUnits="userSpaceOnUse" x1="2" y1="-2" x2="87" y2="84">
+								<stop offset="0" stop-color="#f26d58"/>
+								<stop offset="1" stop-color="#f9a03c"/>
+								</linearGradient>
+								<linearGradient id="gradient-3" gradientUnits="userSpaceOnUse" x1="45" y1="-10" x2="108" y2="53">
+								<stop offset="0" stop-color="#b84e51"/>
+								<stop offset="1" stop-color="#f68e48"/>
+								</linearGradient>
+								<g clip-path="url(#clip)">
+								<path d="M-100,-102m-27,0v300h300z" fill="url(#gradient-1)"/>
+								<path d="M-100,-102m27,0h300v300z" fill="url(#gradient-3)"/>
+								<path d="M-100,-102l300,300" fill="none" stroke="url(#gradient-2)" stroke-width="40"/>
+								</g>
+							</svg>
+							<clipPath xmlns="http://www.w3.org/2000/svg" id="clip">
+							<path d="M0,0h7.75a45.5,45.5 0 1 1 0,91h-7.75v-20h7.75a25.5,25.5 0 1 0 0,-51h-7.75zm36.2510,0h32a27.75,27.75 0 0 1 21.331,45.5a27.75,27.75 0 0 1 -21.331,45.5h-32a53.6895,53.6895 0 0 0 18.7464,-20h13.2526a7.75,7.75 0 1 0 0,-15.5h-7.75a53.6895,53.6895 0 0 0 0,-20h7.75a7.75,7.75 0 1 0 0,-15.5h-13.2526a53.6895,53.6895 0 0 0 -18.7464,-20z"/>
+							</clipPath><linearGradient xmlns="http://www.w3.org/2000/svg" gradientUnits="userSpaceOnUse" x1="7" y1="64" x2="50" y2="107" id="gradient-1">
+							<stop offset="0" stop-color="#f9a03c"/>
+							<stop offset="1" stop-color="#f7974e"/>
+							</linearGradient>
+							<linearGradient xmlns="http://www.w3.org/2000/svg" id="gradient-2" gradientUnits="userSpaceOnUse" x1="2" y1="-2" x2="87" y2="84">
+							<stop offset="0" stop-color="#f26d58"/>
+							<stop offset="1" stop-color="#f9a03c"/>
+							</linearGradient>
+							<linearGradient xmlns="http://www.w3.org/2000/svg" id="gradient-3" gradientUnits="userSpaceOnUse" x1="45" y1="-10" x2="108" y2="53">
+							<stop offset="0" stop-color="#b84e51"/>
+							<stop offset="1" stop-color="#f68e48"/>
+							</linearGradient>
+							<g xmlns="http://www.w3.org/2000/svg" clip-path="url(#clip)">
+							<path d="M-100,-102m-27,0v300h300z" fill="url(#gradient-1)"/>
+							<path d="M-100,-102m27,0h300v300z" fill="url(#gradient-3)"/>
+							<path d="M-100,-102l300,300" fill="none" stroke="url(#gradient-2)" stroke-width="40"/>
+							</g>
+
+							<figcaption>
+								<h2>DATA <span>VISUALIZATION</span></h2>
+								<div class="icon-links">
+									<a href="https://www.github.com/Qparrot" class="best"><i class="fab fa-github"></i></a>	
+									<a href="https://www.quentinparrot.com/data-visualization/index.html" class="best"><i class="fas fa-eye"></i></a>	
+									<a href="#Contact" class="best"><i class="far fa-envelope"></i></a>
+									<a  href="https://www.quentinparrot.com/data-visualization/index.html" target="_blank">
+										<span id="d3LinkPanel"></span>
+									</a>
+								</div>
+								<p class="description">Made with D3.js</p>
+							</figcaption>			
+							<a  href="https://www.quentinparrot.com/data-visualization/index.html" target="_blank">
+								<span id="d3LinkTile"></span>
+							</a>
+						</figure>
+					</div>
+				</div>
 			</div>
-		</div>
-		<div class="contactMe">
+		</section>
+		<section id="Contact">
 			<div class="container">
-				<div id="Contact" class="contact-wrap">
+				<div class="contact-wrap">
 					<h2 class="text-center">CONTACT:</h2>
-					<form action="/sendForm" method="POST" class="contact-form">
+					<form id="ContactForm" formtarget="_self" action="/sendForm" method="POST" class="contact-form">
 						<div class="col-sm-6">
 							<div class="input-block">
 								<label for="firstName">First Name</label>
@@ -95,12 +222,94 @@
 							</div>
 						</div>
 						<div class="col-sm-12">
-							<button class="square-button">Send</button>
+							<button type="submit" class="square-button">Send</button>
 						</div>
 					</form>
 				</div>
 			</div>
-		</div>
+		</section>
+		<footer>
+			<div class="footer-main container">
+				<div class="row">
+					<div class="col-md-4">
+						<ul class="row">
+							<li class="col-sm-12">
+								<div class="region region-col-footer-1">
+									<div id="block-block-59" class="block block-block">
+										<h2>Quentin Parrot's Portfolio</h2>
+										<div class="content">
+											<p>I am a passionate developer who will help you build your website.</p>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="col-md-4">
+						<div class="region region-col-footer-3">
+							<nav id="block-menu-menu-useful-links" class="block block-menu" role="navigation">
+								<h2>Useful links</h2>
+								<div class="content">
+									<ul class="menu clearfix">
+										<li class="first leaf">
+											<a href="https://www.freecodecamp.org">FreeCodeCamp</a>
+										</li>
+										<li class="leaf">
+											<a href="https://codepen.com">CodePen</a>
+										</li>
+										<li class="last leaf">
+											<a href="/contact">Contact</a>
+										</li>
+									</ul>  </div>
+							</nav>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="region region-col-footer-4">
+							<div id="block-block-3" class="block block-block">
+								<h2>Where to find me</h2>
+								<div class="content">
+									<p>parrot.quentin@gmail.com</p>  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="rights">
+				<div class="container">
+					<ul class="row">
+						<li class="col-md-8">
+							<div class="region region-footer-copyright">
+								<div id="block-block-1" class="block block-block">
+									<div class="content">
+										<p>Copyright © 2020. All right reserved<br><em>Developed with <i class="fas fa-heart"></i> by <a href="https://www.quentinparrot.com" target="_blank">Quentin Parrot, Freelance Web Developer in Berlin</a></em></p>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="col-md-4">
+							<div class="region region-footer-social-icons">
+								<nav id="block-menu-menu-footer-social-icons" class="block block-menu social-icons" role="navigation">
+									<div class="content">
+										<ul class="menu clearfix">
+											<li class="leaf github">
+												<a class="fab fa-github" href="https://github.com/Qparrot" target="_blank">
+												</a>
+											</li>
+											<li class="last linkedin leaf">
+												<a class="fab fa-linkedin" href="www.linkedin.com/in/quentinparrot" target="_blank" >
+												</a>
+											</li>
+										</ul>
+									</div>
+								</nav>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</footer>
 		<script src="index.js"></script>
 		<script src="beautybackground.js"></script>
 	</body>

@@ -1,72 +1,79 @@
-var fr = document.getElementById('fr');
-var en = document.getElementById('en');
-var al = document.getElementById('al');
-var about = document.getElementById('about');
-var projects = document.getElementById('projects');
-var contact = document.getElementById('contact');
-var title = document.getElementById('title');
-var shortDescription = document.getElementById('shortDescription');
+/* NAV BAR */
 
 
-function reload()
-{
-	setTimeout(function()
-	{
-		location.reload();
-	}, 100);
-}
 
-var language = {
-	eng: {
-		about: "About",
-		projects: "Projects",
-		contact: "Contact",
-		title: "FRONT END DEVELOPER",	
-		shortDescription: "building websites that achieve entrepreneurs' goals"
-	},
-	de: {
-		about: "Über mich",
-		projects: "Projekte",
-		contact: "Kontakt",
-		title: "FRONT END ENTWICKLER",	
-		shortDescription: "Erstellung von Websites, die die Ziele der Unternehmer erreichen!"
-	},
-	fr: {
-		about: "Qui suis-je?",
-		projects: "Projets",
-		contact: "Contact",
-		title: "FRONT END DEVELOPPEUR",	
-		shortDescription: "Création de sites web qui atteignent les objectifs des entrepreneurs !"
-	}
-};
-if(window.location.hash)
-{
-	if(window.location.hash === "#eng") 
+$(function() {
+	menu= $('nav .cf');
+
+	$('#openup').on('click', function(e) {
+		e.preventDefault(); menu.slideToggle();
+	});
+
+	$(window).resize(function(){
+		var w = $(this).width();
+		if(w > 580 && menu.is(':hidden'))
+		{
+			menu.removeAttr('style');
+		}
+	});
+
+	$('.cf li').on('click', function(e)
+		{
+			var w = $(window).width();
+			if(w < 580)
+			{
+				menu.slideToggle();
+			}
+		});
+	$('.open-menu').height($(window).height());
+});
+
+// SMOOTH MOVE
+
+$('.smooth-move').on('click', function(event)
 	{
-		about.textContent = language.eng.about;
-		projects.textContent = language.eng.projects;
-		contact.textContent = language.eng.contact;
-		title.textContent = language.eng.title;
-		shortDescription.textContent = language.eng.shortDescription;
-	}
-	if(window.location.hash === "#de")
-	{
-		about.textContent = language.de.about;
-		projects.textContent = language.de.projects;
-		contact.textContent = language.de.contact;
-		title.textContent = language.de.title;
-		shortDescription.textContent = language.de.shortDescription;
-	}
-	if(window.location.hash === "#fr")
-	{
-		about.textContent = language.fr.about;
-		projects.textContent = language.fr.projects;
-		contact.textContent = language.fr.contact;
-		title.textContent = language.fr.title;
-		shortDescription.textContent = language.fr.shortDescription;
-	}
-}
-// define language reload onclick iteration
+		if (this.hash !=='')
+		{
+			event.preventDefault();
+			const hash = this.hash;
+			$('html, body').animate(
+				{
+					scrollTop: $(hash).offset().top
+				},
+				800,
+				function()
+				{
+					window.location.hash = hash;
+				}
+			);
+		}
+	});
+
+
+// activate the color of the current section
+
+
+var sections = $('section')
+  , nav = $('nav')
+  , nav_height = nav.outerHeight();
+$(window).on('scroll', function () {
+  var cur_pos = $(this).scrollTop();
+ 
+  sections.each(function() {
+    var top = $(this).offset().top - nav_height,
+        bottom = top + $(this).outerHeight();
+
+    if (cur_pos >= top && cur_pos <= bottom) {
+      nav.find('a').removeClass('active');
+      sections.removeClass('active');
+ 
+      $(this).addClass('active');
+      nav.find('a[href="#'+$(this).attr('id')+'"]').addClass('active');
+    }
+  });
+});
+
+
 
 /* CONTACT FORM */
 
@@ -122,52 +129,40 @@ $('.contact-form').find('.form-control').blur(function() {
     }, 300);
   }
 })
-// Responsive nav
 
-$(function() {
-	menu= $('nav .cf');
+// Paralax effect for the project tiles
+$(window).scroll(function() {
 
-	$('#openup').on('click', function(e) {
-		e.preventDefault(); menu.slideToggle();
-	});
+const scrollTop = $(this).scrollTop();
 
-	$(window).resize(function(){
-		var w = $(this).width();
-		if(w > 580 && menu.is(':hidden'))
-		{
-			menu.removeAttr('style');
-		}
-	});
+	if(scrollTop > $('#Portfolio').offset().top - $(window).height())
+	{
+		var offsetPortfolio = Math.max(-$(window).width()/2, Math.min(0, scrollTop - $('#Portfolio').offset().top));
+		console.log('offsetPortfolio: ' + offsetPortfolio);
+		var offsetD3 = Math.min($(window).width()/2, Math.max(0, - scrollTop + $('#Portfolio').offset().top ));
+		console.log('offsetD3: ' + offsetD3);
+		$('#portfolio').css({'transform': 'translate(' + offsetPortfolio + 'px, 20px)'});
+ 		$('#portfolio').css({'opacity':  scrollTop / ($(window).height() * 1.25)});
+		$('#D3').css({'transform': 'translate(' + offsetD3 + 'px, 20px)'});
+ 		$('#D3').css({'opacity': scrollTop / ($(window).height() + 1.25)});
+		console.log(scrollTop);
+	}
+})
 
-	$('.cf li').on('click', function(e)
-		{
-			var w = $(window).width();
-			if(w < 580)
-			{
-				menu.slideToggle();
-			}
-		});
-	$('.open-menu').height($(window).height());
+/* pop up */
+
+
+$('#portfolio').click(function(){
+	$('.pop-up').addClass('open');
+	$('.projectsContainer').addClass('blur');
 });
 
-// SMOOTH MOVE
+$('.pop-up .return').click(function(){
+  $('.pop-up').removeClass('open');
+	$('.projectsContainer').removeClass('blur');
+});
 
-$('.nav-link').on('click', function(event)
-	{
-		if (this.hash !=='')
-		{
-			event.preventDefault();
-			const hash = this.hash;
-			$('html, body').animate(
-				{
-					scrollTop: $(hash).offset().top
-				},
-				800,
-				function()
-				{
-					window.location.hash = hash;
-				}
-			);
-		}
-	});
-
+$('.invisibleDiv').click(function(){
+	$('.pop-up').removeClass('open');
+	$('.projectsContainer').removeClass('blur');
+});
