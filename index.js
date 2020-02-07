@@ -154,15 +154,18 @@ const scrollTop = $(this).scrollTop();
 
 $('#portfolio').click(function(){
 	$('.pop-up').addClass('open');
-	$('.projectsContainer').addClass('blur');
+	$('.pop-up').removeClass('notOpen');
+	$('.wrap').addClass('blur');
 });
 
 $('.pop-up .return').click(function(){
-  $('.pop-up').removeClass('open');
-	$('.projectsContainer').removeClass('blur');
+	$('.pop-up').removeClass('open');
+	$('.pop-up').addClass('notOpen');
+	$('.wrap').removeClass('blur');
 });
 
 $('.invisibleDiv').click(function(){
 	$('.pop-up').removeClass('open');
-	$('.projectsContainer').removeClass('blur');
+	$('.pop-up').addClass('notOpen');
+	$('.wrap').removeClass('blur');
 });
