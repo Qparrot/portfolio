@@ -10,8 +10,8 @@ BODY
 	+ HEADER
 		++ NAVBAR
 	+ SHOWCASE
-		++ POP-UP
 	+ PORTFOLIO
+		++ POP-UP
 	+ CONTACT
 	+ FOOTER
 -------------------------------------------------------------------*/
@@ -322,6 +322,8 @@ a#RESUME:hover {
 
 #Showcase
 {
+	display: grid;
+	grid-template-rows:  25vh 200px auto;
 	width: 100%;
 	height: 100vh;
 	text-align: center;
@@ -334,8 +336,8 @@ a#RESUME:hover {
 
 #shortPresentation
 {
-	position: relative;
-	top: 25%;
+	grid-row-start: 2;
+	grid-row-end: 3;
 }
 
 #shortPresentation p
@@ -356,7 +358,10 @@ body {
 	//  scroll-behavior: smooth;
 }
 
-
+.background-limits {
+	grid-row-start:3;
+	grid-row-end: 4;
+}
 @-webkit-keyframes scroll-indicator {
 	0% {
 		-webkit-transform: translate3d(-50%, 0, 0);
@@ -403,6 +408,15 @@ body {
 	z-index: 5;
 }
 
+.scroll-indicator {
+	stroke: #333;
+}
+@media screen and (max-width: 500px) {
+	.scroll-indicator {
+		stroke: #fff;
+		fill: #fff;
+	}
+}
 /* ====================================
  * PORTFOLIO:
  * ================================= */

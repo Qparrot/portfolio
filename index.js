@@ -2,7 +2,7 @@
  * NAV BAR:
  * ================================= */
 
-
+ $('#Showcase').css({'height': window.innerHeight});
 
 $(function() {
 	menu = $('nav .cf');
