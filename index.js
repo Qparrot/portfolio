@@ -104,7 +104,10 @@ let blockTheScroll;
 
 $(window).scroll(function() {
 
-
+	if(window.innerWidth <= 500)
+	{
+		blockTheScroll = 1;
+	}
 	console.log('BlockScroll:' + blockTheScroll);
 	if (!blockTheScroll)
 	{
@@ -128,6 +131,8 @@ $(window).scroll(function() {
 	else
 	{
 		$('#portfolio').css({'opacity' : '1'});
+		$('#portfolio').css({'transform' : 'none'});
+		$('#D3').css({'transform' : 'none'});
 	}
 })
 

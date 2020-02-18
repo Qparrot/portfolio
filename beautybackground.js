@@ -28,10 +28,10 @@ function App(conf) {
 	const raycaster = new THREE.Raycaster();
 
 
+	if(window.innerWidth > 500)
+		init();
 
-	init();
-
-	function init() {
+	function init(){
 		renderer = new THREE.WebGLRenderer({ canvas: document.getElementById(conf.el), antialias: true, alpha: true });
 		camera = new THREE.PerspectiveCamera(conf.fov);
 		camera.position.z = conf.cameraZ;
@@ -54,7 +54,6 @@ function App(conf) {
 
 		initScene();
 		animate();
-		applyColorChanges(conf.colors);
 	}
 
 	function initScene() {
@@ -98,7 +97,6 @@ function App(conf) {
 		requestAnimationFrame(animate);
 
 		animatePlane();
-		//	animateLights();
 
 		renderer.render(scene, camera);
 	};
@@ -144,19 +142,6 @@ function App(conf) {
 	{
   		return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
 	}
-
-	function applyColorChanges(colors)
-	{
-		var css = '.changeColorWithBackground { color: ' + '#' + colors[4].toString(16) + '}';
-		var style = document.createElement('style');
-
-		if (style.styleSheet) 
-    			style.styleSheet.cssText = css;
-		else
-			style.appendChild(document.createTextNode(css));
-		document.getElementsByTagName('head')[0].appendChild(style);
-	}
-
 
 	function updateSize() {
 		width = window.innerWidth; cx = width / 2;
