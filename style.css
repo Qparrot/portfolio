@@ -410,6 +410,7 @@ body {
 	transition-duration: 1s;
 	padding: 20px;
 	z-index: 5;
+	stroke: #333;
 }
 
 .scroll-indicator {
@@ -417,10 +418,9 @@ body {
 @media screen and (max-width: 500px) {
 	.scroll-indicator {
 		stroke: #fff;
-		fill: #fff;
 	}
 	.background-limits {
-		background: url('threeBackground.png') no-repeat;
+		background: url('./img/threeBackground.png') no-repeat;
 		background-size: 100% 100%;
 		background-position:  left 0px bottom 0px;
 		z-index: 1;
@@ -672,7 +672,7 @@ figcaption .icon-links
 	}
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 500px) {
 	#Portfolio figure figcaption {
 		padding: 15px 5px;
 	}
